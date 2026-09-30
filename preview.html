@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Una sorpresita para ti 💗</title>
+<style>
+:root{color-scheme:light dark;--bg:#06142e;--ink:#10203f;--pink:#7ec8ff;--red:#1768d8;--card:#f7fbff;--muted:#506887}
+*{box-sizing:border-box}body{margin:0;font-family:"Times New Roman",Times,serif;background:var(--bg);color:var(--ink)}
+#app{min-height:100vh;background:radial-gradient(circle at 50% 15%,#176bc7 0,#0b3470 32%,#06142e 78%);overflow:hidden;position:relative}
+.hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}.heart{position:absolute;bottom:-30px;font-size:22px;animation:float 7s linear infinite;opacity:.55}@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+main{min-height:100vh;display:grid;place-items:center;padding:28px 18px}.card{width:min(620px,100%);background:rgba(255,248,252,.9);border:1px solid rgba(255,255,255,.8);border-radius:30px;padding:32px 24px;text-align:center;box-shadow:0 24px 70px rgba(143,37,83,.22);backdrop-filter:blur(10px);position:relative;z-index:1}
+.badge{display:inline-block;background:#eaf6ff;color:#1768d8;font-weight:800;padding:8px 14px;border-radius:999px;font-size:13px;letter-spacing:.5px}.tiny{color:var(--muted);margin:12px 0 0}.car{font-size:94px;filter:drop-shadow(0 12px 8px rgba(20,90,180,.28));margin:12px 0 2px;animation:drive 2.5s ease-in-out infinite}@keyframes drive{50%{transform:translateX(9px) rotate(-1deg)}}h1{font-size:clamp(30px,7vw,50px);line-height:1.02;margin:8px 0 12px}p{font-size:17px;line-height:1.6;margin:8px auto;max-width:500px}.from{font-weight:800;color:var(--pink)}button{border:0;border-radius:999px;padding:14px 22px;font-weight:800;font-size:16px;cursor:pointer;background:var(--red);color:white;box-shadow:0 10px 22px rgba(23,104,216,.35);margin-top:18px;transition:.2s}button:hover{transform:translateY(-2px)}#surprise{display:none;margin-top:22px;background:#fff;border-radius:22px;padding:20px;color:var(--ink);animation:pop .45s ease}@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}.note{font-style:italic;color:#31557f}.road{height:7px;background:#4a4a52;border-radius:10px;margin:22px -5px 0;position:relative}.road:after{content:'';position:absolute;left:0;right:0;top:2px;border-top:3px dashed #fff}
+@media(prefers-color-scheme:dark){#app{background:linear-gradient(145deg,#381d2a,#4a2034,#56213a)}.card{background:rgba(38,22,31,.94);border-color:#704158}.tiny{color:#caaabd}#surprise{background:#2c1a24;color:#ffeaf3}.note{color:#e3b8ca}}
+</style>
+</head>
+<body><div id="app"><div class="hearts" aria-hidden="true"></div><main><section class="card">
+<div class="badge">30 DE SEPTIEMBRE 🏎️💗</div>
+<div class="car">🏎️</div>
+<h1>Una sorpresita para ti :3</h1>
+<p>Hoy no podía regalarte un carrito de verdad… así que te hice uno <b>digital</b>. 💕</p>
+<p class="from">Hecho especialmente para ti, con mucho cariño.</p>
+<button id="open">Abrir mi sorpresa 💌</button>
+<div id="surprise"><p class="note">“Puede ser un carrito pequeño, pero lleva un mensaje enorme: me encanta tenerte en mi vida y quería hacerte sonreír hoy. 🥹💗”</p><p>Espero que te guste esta pequeña sorpresa. 🫶</p><div style="font-size:30px">🏁 🏎️ 💨 💕</div></div>
+<div class="road"></div>
+</section></main></div>
+<script>
+const box=document.querySelector('.hearts');for(let i=0;i<18;i++){const s=document.createElement('span');s.className='heart';s.textContent=['💗','💕','💖','✨'][i%4];s.style.left=(Math.random()*100)+'%';s.style.animationDelay=(Math.random()*6)+'s';s.style.animationDuration=(5+Math.random()*5)+'s';box.appendChild(s)}
+document.getElementById('open').onclick=()=>{document.getElementById('surprise').style.display='block';document.getElementById('open').textContent='Sorpresa abierta 💗';document.getElementById('open').disabled=true;}
+</script></body></html>
